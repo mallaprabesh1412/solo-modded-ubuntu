@@ -1,15 +1,15 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 : <<'BANNER'
   _________________  .____    ________     ____ _____________ ____ _________________________ ___ 
  /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
  \_____  \  /   |   \|    |    /   |   \  |    |   /|    |  _/    |   /   |   \|    |  |    |   /
  /        \/    |    \    |___/    |    \ |    |  / |    |   \    |  /    |    \    |  |    |  / 
 /_______  /\_______  /_______ \_______  / |______/  |______  /______/\____|__  /____|  |______/  
-        \/         \/        \/       \/                   \/                \/                  
+        \/         \/       \/                   \/                \/                  
 BANNER
 
-# Removes the solo-modded-ubuntu distro
+echo "[+] Removing Solo Modded Ubuntu..."
 
-echo "[!] Removing Ubuntu distro..."
-proot-distro remove ubuntu-solo
-echo "[+] Done."
+proot-distro remove ubuntu
+rm -rf ~/solo-modded-ubuntu
+echo "[+] Removed successfully!"
