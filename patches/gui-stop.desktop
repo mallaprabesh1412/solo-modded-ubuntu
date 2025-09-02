@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Stop Ubuntu GUI
+Exec=/bin/bash ~/solo-modded-ubuntu/distro/vncstop
+Icon=~/solo-modded-ubuntu/distro/image.jpg
+Terminal=false
+Categories=System;Utility;
