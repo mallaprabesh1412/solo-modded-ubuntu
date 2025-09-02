@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Firefox
+Exec=/bin/bash ~/solo-modded-ubuntu/distro/firefox.sh
+Icon=~/solo-modded-ubuntu/distro/image1.jpg
+Terminal=false
+Categories=Network;WebBrowser;
