@@ -1,4 +1,17 @@
 #!/data/data/com.termux/files/usr/bin/bash
+: <<'BANNER'
+  _________________  .____    ________     ____ _____________ ____ _________________________ ___ 
+ /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
+ \_____  \  /   |   \|    |    /   |   \  |    |   /|    |  _/    |   /   |   \|    |  |    |   /
+ /        \/    |    \    |___/    |    \ |    |  / |    |   \    |  /    |    \    |  |    |  / 
+/_______  /\_______  /_______ \_______  / |______/  |______  /______/\____|__  /____|  |______/  
+        \/         \/        \/       \/                   \/                \/                  
+BANNER
+
+# Stop VNC server
+
+DISTRO_NAME="ubuntu-solo"
+
 echo "[+] Stopping VNC..."
-proot-distro login ubuntu -- bash -c "vncserver -kill :1"
-echo "[+] VNC server stopped"
+proot-distro login $DISTRO_NAME -- bash -c "vncserver -kill :1"
+echo "[+] VNC stopped."
