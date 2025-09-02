@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Start Ubuntu GUI
+Exec=/bin/bash ~/solo-modded-ubuntu/distro/vncstart
+Icon=~/solo-modded-ubuntu/distro/image.jpg
+Terminal=false
+Categories=System;Utility;
