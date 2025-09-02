@@ -1,134 +1,172 @@
-# solo-modded-ubuntu
 
 
----
+# Solo Modded Ubuntu
 
-_________________  .____    ________     ____ _____________ ____ _________________________ ___ 
- /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
- \_____  \  /   |   \|    |    /   |   \  |    |   /|    |  _/    |   /   |   \|    |  |    |   /
- /        \/    |    \    |___/    |    \ |    |  / |    |   \    |  /    |    \    |  |    |  / 
-/_______  /\_______  /_______ \_______  / |______/  |______  /______/\____|__  /____|  |______/  
-        \/         \/        \/       \/                   \/                \/                  
+A fully modded Ubuntu environment running inside **Termux** with **XFCE desktop** via VNC.  
 
-# 🐧 Solo Modded Ubuntu (GUI + VNC in Termux)
-
-Run a **full Ubuntu desktop environment** inside Termux on Android — complete with **XFCE4 GUI, Firefox, VS Code, and VNC support**.  
-No root required. Works on modern Android devices.  
+- Modern interface with **wallpaper** and **desktop icons** for Firefox, VS Code, and GUI controls.  
+- ASCII banners in all scripts for style.  
+- Works out-of-the-box for any Termux user.  
 
 ---
 
-## ✨ Features
-- ⚡ One-command setup (`bash setup.sh`)
-- 🖥️ XFCE4 Desktop Environment
-- 🌐 Firefox browser support
-- 🖊️ VS Code launcher (`code.desktop`)  
-- 🔑 Default user account (`termuxuser`)
-- 🎨 Desktop shortcuts (`firefox.desktop`, `gui-start.desktop`, `gui-stop.desktop`, `code.desktop`)  
-- 📡 VNC server for GUI access
+## **Screenshot / Wallpaper**
+
+![Solo Modded Ubuntu Desktop](distro/image.jpg)
+
+> The interface includes a panel at the top, desktop icons, and a clean wallpaper.
 
 ---
 
-## 📦 Installation
+## **Quick Start**
 
-1. **Install Termux** from [F-Droid](https://f-droid.org/en/packages/com.termux/)  
-   > ⚠️ Avoid outdated Play Store version.
+1. **Install Termux** (F-Droid version recommended)  
+2. **Clone the repository**  
 
-2. **Clone the repo**:
 ```bash
 git clone https://github.com/mallaprabesh1412/solo-modded-ubuntu.git
 cd solo-modded-ubuntu
 
-3. Run the setup script:
+3. Setup the environment
 
 
 
 bash setup.sh
 
+Installs Ubuntu if missing
+
+Makes scripts executable
+
+Copies .desktop files to Ubuntu Desktop
+
+
 
 ---
 
-🚀 Usage
+Usage
 
-Start Ubuntu GUI
+Step 1: Enter Ubuntu shell
 
-bash distro/gui.sh
+./solo
 
-Connect via VNC Viewer:
+You will now be in the Ubuntu shell as:
 
-localhost:5901
-
-Password: termux
-
-Stop Ubuntu GUI
-
-bash distro/vncstop
-
-Launch Firefox
-
-bash distro/firefox.sh
-
-Launch VS Code
-
-Click the Code icon on your desktop (or run):
-
-bash distro/code.sh
+solo@localhost:~$
 
 
+---
+
+Step 2: Start GUI / VNC
+
+Inside Ubuntu:
+
+vncstart
+
+VNC starts on display :1 → port 5901
+
+XFCE desktop loads automatically with your wallpaper and desktop icons
 
 
-🗑️ Removal
-
-To completely remove Ubuntu:
-
-bash remove.sh
+Connect using VNC Viewer (localhost:5901) with default password: termux.
 
 
+---
+
+Step 3: Stop GUI / VNC
+
+Inside Ubuntu:
+
+vncstop
 
 
-📂 Project Structure
+---
 
-solo-modded-ubuntu/
-├── setup.sh
-├── remove.sh
-├── README.md
-├── CHANGELOG.md
-├── LICENSE
-│
-├── distro/
-│   ├── proot-distro.sh
-│   ├── gui.sh
-│   ├── firefox.sh
-│   ├── code.sh          # VS Code launcher
-│   ├── user.sh
-│   ├── vncstart
-│   ├── vncstop
-│   ├── image.jpg
-│   └── image1.jpg
-│
-└── patches/
-    ├── code.desktop
-    ├── firefox.desktop
-    ├── gui-start.desktop
-    └── gui-stop.desktop
+Desktop Interface
+
+Wallpaper: distro/image.jpg
+
+Desktop icons:
+
+Firefox
+
+VS Code
+
+Start GUI
+
+Stop GUI
 
 
 
-
-📖 Notes
-
-Default user: termuxuser, password: termux
-
-XFCE4 is the desktop environment
-
-Tested on Android 10+ with latest Termux
-
-VNC Viewer required for GUI
+Click icons to launch applications instantly.
 
 
+---
+
+Scripts Overview
+
+Script	Description
+
+solo	Launch Ubuntu shell
+distro/vncstart	Start VNC + XFCE desktop
+distro/vncstop	Stop VNC
+distro/firefox.sh	Launch Firefox
+distro/code.sh	Launch VS Code
+setup.sh	Setup environment and permissions
+remove.sh	Remove Ubuntu and repo
+distro/gui.sh	Alias for vncstart
+distro/user.sh	User management helper
+distro/proot-distro.sh	Optional PRoot helper
 
 
 
-📝 License
+---
 
-This project is licensed under the MIT License
+.desktop Files
+
+All .desktop files are in patches/ and copied automatically to Ubuntu Desktop:
+
+File	Description
+
+firefox.desktop	Launch Firefox
+code.desktop	Launch VS Code
+gui-start.desktop	Start VNC GUI
+gui-stop.desktop	Stop VNC GUI
+
+
+
+---
+
+Requirements
+
+Termux (F-Droid recommended)
+
+Internet connection for Ubuntu setup
+
+VNC Viewer app
+
+
+
+---
+
+License
+
+See LICENSE
+
+
+---
+
+Changelog
+
+See CHANGELOG.md
+
+---
+
+✅ **This README.md highlights:**
+
+- Your wallpaper as the screenshot (`distro/image.jpg`)  
+- Clear step-by-step workflow for new users  
+- Desktop interface explanation (icons, panel, wallpaper)  
+- All script references match the new updated repo  
+
+---
 
