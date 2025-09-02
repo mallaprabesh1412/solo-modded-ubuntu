@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "[+] Stopping VNC..."
+proot-distro login ubuntu -- bash -c "vncserver -kill :1"
+echo "[+] VNC server stopped"
