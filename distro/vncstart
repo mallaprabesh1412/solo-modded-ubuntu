@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "[+] Starting VNC..."
+proot-distro login ubuntu -- bash -c "vncserver :1 -geometry 1280x720 -depth 24"
+echo "[+] VNC server started on :1"
