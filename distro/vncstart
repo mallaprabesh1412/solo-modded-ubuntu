@@ -1,17 +1,32 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 : <<'BANNER'
   _________________  .____    ________     ____ _____________ ____ _________________________ ___ 
  /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
  \_____  \  /   |   \|    |    /   |   \  |    |   /|    |  _/    |   /   |   \|    |  |    |   /
  /        \/    |    \    |___/    |    \ |    |  / |    |   \    |  /    |    \    |  |    |  / 
 /_______  /\_______  /_______ \_______  / |______/  |______  /______/\____|__  /____|  |______/  
-        \/         \/        \/       \/                   \/                \/                  
+        \/         \/       \/                   \/                \/                  
 BANNER
 
-# Start VNC server
+DISPLAY_NUM=1
+RESOLUTION="1280x720"
+DEPTH=24
 
-DISTRO_NAME="ubuntu-solo"
+# Clean stale VNC files
+rm -f ~/.vnc/*.pid
+rm -f /tmp/.X${DISPLAY_NUM}-lock
+rm -rf /tmp/.X11-unix/X${DISPLAY_NUM}
 
-echo "[+] Starting VNC..."
-proot-distro login $DISTRO_NAME -- bash -c "vncserver :1 -geometry 1280x720 -depth 24"
-echo "[+] VNC started on :1 (localhost:5901)"
+# Start XFCE
+vncserver :$DISPLAY_NUM -geometry $RESOLUTION -depth $DEPTH
+
+# Ensure XFCE starts
+mkdir -p ~/.vnc
+cat > ~/.vnc/xstartup <<EOL
+#!/bin/bash
+xrdb \$HOME/.Xresources
+startxfce4 &
+EOL
+chmod +x ~/.vnc/xstartup
+
+echo "[+] VNC started on :$DISPLAY_NUM (localhost:5901)"
