@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 : <<'BANNER'
   _________________  .____    ________     ____ _____________ ____ _________________________ ___ 
  /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
@@ -8,19 +8,21 @@
         \/         \/        \/       \/                   \/                \/                  
 BANNER
 
-# Setup script for solo-modded-ubuntu Termux environment
+echo "[+] Setting up Solo Modded Ubuntu..."
 
-echo "[+] Updating Termux packages..."
-pkg update -y && pkg upgrade -y
+# Install Ubuntu if missing
+if ! proot-distro list | grep -q ubuntu; then
+    echo "[+] Installing Ubuntu..."
+    proot-distro install ubuntu
+fi
 
-echo "[+] Installing required packages..."
-pkg install -y proot-distro git wget curl tigervnc
+# Make scripts executable
+chmod +x solo
+chmod +x distro/vncstart distro/vncstop distro/gui.sh distro/firefox.sh distro/code.sh distro/proot-distro.sh distro/user.sh
 
-echo "[+] Setting up Ubuntu distro..."
-bash distro/proot-distro.sh
+# Copy .desktop files to Ubuntu desktop
+mkdir -p ~/Desktop
+cp patches/*.desktop ~/Desktop/
+chmod +x ~/Desktop/*.desktop
 
-echo "[+] Creating default user..."
-bash distro/user.sh
-
-echo "[+] Done! Start GUI with:"
-echo "    bash distro/gui.sh"
+echo "[+] Setup complete! Run 'solo' to enter Ubuntu shell."
