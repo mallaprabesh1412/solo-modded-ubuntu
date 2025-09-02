@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Launch Ubuntu shell
+DISTRO_NAME="ubuntu"
+proot-distro login $DISTRO_NAME
