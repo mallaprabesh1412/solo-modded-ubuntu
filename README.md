@@ -1,38 +1,48 @@
 # solo-modded-ubuntu
 
 
-# 🐧 Modded Ubuntu in Termux (with GUI + VNC)
+---
 
-Run a full **Ubuntu Linux Desktop Environment** inside Termux on Android — complete with **XFCE4 GUI, Firefox browser, and VNC access**.  
-No root required. Works on most modern Android devices.  
+_________________  .____    ________     ____ _____________ ____ _________________________ ___ 
+ /   _____/\_____  \ |    |   \_____  \   |    |   \______   \    |   \      \__    ___/    |   \
+ \_____  \  /   |   \|    |    /   |   \  |    |   /|    |  _/    |   /   |   \|    |  |    |   /
+ /        \/    |    \    |___/    |    \ |    |  / |    |   \    |  /    |    \    |  |    |  / 
+/_______  /\_______  /_______ \_______  / |______/  |______  /______/\____|__  /____|  |______/  
+        \/         \/        \/       \/                   \/                \/                  
+
+# 🐧 Solo Modded Ubuntu (GUI + VNC in Termux)
+
+Run a **full Ubuntu desktop environment** inside Termux on Android — complete with **XFCE4 GUI, Firefox, VS Code, and VNC support**.  
+No root required. Works on modern Android devices.  
 
 ---
 
 ## ✨ Features
 - ⚡ One-command setup (`bash setup.sh`)
-- 🖥️ Full Ubuntu XFCE4 Desktop Environment
+- 🖥️ XFCE4 Desktop Environment
 - 🌐 Firefox browser support
+- 🖊️ VS Code launcher (`code.desktop`)  
 - 🔑 Default user account (`termuxuser`)
-- 🎨 Desktop shortcuts & patches support
+- 🎨 Desktop shortcuts (`firefox.desktop`, `gui-start.desktop`, `gui-stop.desktop`, `code.desktop`)  
 - 📡 VNC server for GUI access
 
 ---
 
 ## 📦 Installation
 
-1. **Install Termux** from [F-Droid](https://f-droid.org/en/packages/com.termux/).  
-   > ⚠️ Avoid the outdated Play Store version.
+1. **Install Termux** from [F-Droid](https://f-droid.org/en/packages/com.termux/)  
+   > ⚠️ Avoid outdated Play Store version.
 
-2. **Clone this repo**:
-   ```bash
-   git clone https://github.com/mallaprabesh1412/solo-modded-ubuntu.git
-   cd modded-ubuntu-termux
+2. **Clone the repo**:
+```bash
+git clone https://github.com/mallaprabesh1412/solo-modded-ubuntu.git
+cd solo-modded-ubuntu
 
 3. Run the setup script:
 
+
+
 bash setup.sh
-
-
 
 
 ---
@@ -43,7 +53,7 @@ Start Ubuntu GUI
 
 bash distro/gui.sh
 
-Now open VNC Viewer (download from Play Store) and connect to:
+Connect via VNC Viewer:
 
 localhost:5901
 
@@ -56,6 +66,12 @@ bash distro/vncstop
 Launch Firefox
 
 bash distro/firefox.sh
+
+Launch VS Code
+
+Click the Code icon on your desktop (or run):
+
+bash distro/code.sh
 
 
 ---
@@ -71,38 +87,42 @@ bash remove.sh
 
 📂 Project Structure
 
-modded-ubuntu-termux/
-├── setup.sh         # Main setup script
-├── remove.sh        # Remove Ubuntu distro
-├── README.md        # This file
-├── CHANGELOG.md     # Version history
-├── LICENSE          # MIT License
+solo-modded-ubuntu/
+├── setup.sh
+├── remove.sh
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
 │
-├── distro/          # Ubuntu + GUI related scripts
+├── distro/
 │   ├── proot-distro.sh
 │   ├── gui.sh
 │   ├── firefox.sh
+│   ├── code.sh          # VS Code launcher
 │   ├── user.sh
 │   ├── vncstart
 │   ├── vncstop
 │   ├── image.jpg
 │   └── image1.jpg
 │
-└── patches/         # Desktop patches
-    └── code.desktop
+└── patches/
+    ├── code.desktop
+    ├── firefox.desktop
+    ├── gui-start.desktop
+    └── gui-stop.desktop
 
 
 ---
 
 📖 Notes
 
-Default user is termuxuser with password termux
+Default user: termuxuser, password: termux
 
 XFCE4 is the desktop environment
 
-Tested on Android 10+ with Termux latest version
+Tested on Android 10+ with latest Termux
 
-VNC Viewer app required to access GUI
+VNC Viewer required for GUI
 
 
 
@@ -110,5 +130,5 @@ VNC Viewer app required to access GUI
 
 📝 License
 
-This project is licensed under the MIT License.
-Feel free to fork, modify, and share!
+This project is licensed under the MIT License
+---
