@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Firefox
-Exec=/bin/bash ~/distro/firefox.sh
-Icon=/bin/bash ~/distro/image1.jpg
+Name=VS Code
+Exec=/bin/bash ~/solo-modded-ubuntu/distro/code.sh
+Icon=~/solo-modded-ubuntu/distro/image1.jpg
 Terminal=false
-Categories=Network;WebBrowser;
+Categories=Development;IDE;
