@@ -74,7 +74,7 @@ Click the Code icon on your desktop (or run):
 bash distro/code.sh
 
 
----
+
 
 🗑️ Removal
 
@@ -83,7 +83,7 @@ To completely remove Ubuntu:
 bash remove.sh
 
 
----
+
 
 📂 Project Structure
 
@@ -112,7 +112,7 @@ solo-modded-ubuntu/
     └── gui-stop.desktop
 
 
----
+
 
 📖 Notes
 
@@ -126,9 +126,9 @@ VNC Viewer required for GUI
 
 
 
----
+
 
 📝 License
 
 This project is licensed under the MIT License
----
+
